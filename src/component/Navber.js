@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navber = () => {
     return (
         <div>
-            <div className="navbar bg-slate-100 text-black container mx-auto mb-10">
+            <div className="navbar p-5 bg-slate-100 text-black container mx-auto mb-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -16,7 +16,7 @@ const Navber = () => {
                             <li><Link>Item 3</Link></li>
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">Aka Food Store</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -29,7 +29,7 @@ const Navber = () => {
 
                 {/* navber end */}
 
-                
+
                 <div className="navbar-end">
                     <Link className="btn">Get started</Link>
                 </div>
