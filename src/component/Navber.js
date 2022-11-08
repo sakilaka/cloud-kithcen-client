@@ -25,17 +25,17 @@ const Navber = () => {
                                     <>
                                         <li><Link to='/addService' className='btn btn-ghost'>Add Service</Link></li>
                                         <li><Link to='/myReviews' className='btn btn-ghost'>My reviews</Link></li>
-                                        <li><Link to='/services'>Services</Link></li>
                                         <li><button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button></li>
                                     </>
                                     :
                                     <>
                                         <li><Link to='/login'>Sign In</Link></li>
                                         <li><Link to='/register'>Sign Up</Link></li>
-                                        <li><Link to='/services'>Services</Link></li>
                                     </>
 
                             }
+                            <li><Link className='btn btn-ghost' to='/services'>Services</Link></li>
+                            <li><Link className='btn btn-ghost' to='/blog'>Blog</Link></li>
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Aka Food Store</Link>
@@ -47,18 +47,18 @@ const Navber = () => {
                                 <>
                                     <li><Link to='/addService' className='btn btn-ghost'>Add Service</Link></li>
                                     <li><Link to='/myReviews' className='btn btn-ghost'>My reviews</Link></li>
-                                    <li><Link to='/services'>Services</Link></li>
                                     <li><button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button></li>
                                 </>
                                 :
                                 <>
                                     <li><Link to='/login'>Sign In</Link></li>
                                     <li><Link to='/register'>Sign Up</Link></li>
-                                    <li><Link to='/services'>Services</Link></li>
-
                                 </>
 
                         }
+                        <li><Link className='btn btn-ghost' to='/services'>Services</Link></li>
+                        <li><Link className='btn btn-ghost' to='/blog'>Blog</Link></li>
+
                     </ul>
                 </div>
 

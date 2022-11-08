@@ -29,7 +29,7 @@ const Service = () => {
                 user?.uid ?
                     <div className='container w-7/12 my-10 border border-white p-10 mx-auto'>
                         <h2 className='text-3xl text-center font-bold text-orange-400 my-5'>Please Review for {name}</h2>
-                        <ReviewForm id={_id}></ReviewForm>
+                        <ReviewForm id={_id} foodName={name}></ReviewForm>
                     </div>
                     :
                     <div className='container mx-auto border border-white my-5'>

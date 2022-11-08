@@ -3,7 +3,7 @@ import { AuthUserContext } from '../Context/AuthContext';
 import Swal from 'sweetalert2';
 
 
-const ReviewForm = ({ id }) => {
+const ReviewForm = ({ id, foodName }) => {
     const { user } = useContext(AuthUserContext);
 
     const handlePlaceReview = (event) => {
@@ -15,7 +15,8 @@ const ReviewForm = ({ id }) => {
         const message = form.message.value;
 
         const review = {
-            food: id,
+            foodID: id,
+            foodName: foodName,
             email: user?.email,
             name: name,
             photoURL: photoURL,
