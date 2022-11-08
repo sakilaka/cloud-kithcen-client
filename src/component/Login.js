@@ -1,0 +1,103 @@
+import React, { useContext, useState } from 'react';
+import {  GoogleAuthProvider } from 'firebase/auth';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { AuthUserContext } from '../Context/AuthContext';
+
+const Login = () => {
+
+
+    const { signIn, setUser, googleProviderLogin } = useContext(AuthUserContext);
+    const [error, setError] = useState(null);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname;
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleLogin = () => {
+        googleProviderLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setUser(user);
+                Navigate(from, { replace: true });
+
+            })
+            .catch(error => {
+                console.log(error);
+
+            })
+    }
+
+
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.pass.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setUser(user);
+            })
+            .catch(error => {
+                console.log(error)
+                if (error.code === "auth/wrong-password") {
+                    setError("Email or Password Incorrect.")
+                }
+                else if (error.code === "auth/user-not-found") {
+                    setError("User not Found.")
+                }
+            });
+        form.reset();
+        navigate(from, { replace: true });
+    }
+
+
+    return (
+        <div>
+            <div className="hero mx-auto p-10 bg-slate-200 container">
+                <div className="hero-content flex-col lg:flex-row">
+                    <div className="text-center lg:text-left">
+                        <h1 className="text-5xl font-bold text-orange-400">Login now!</h1>
+                        <p className="py-6 text-orange-600">Please Login for review and order food.And also more Features</p>
+                    </div>
+                    <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type="password" name='pass' placeholder="password" className="input input-bordered" />
+                            </div>
+                            <div className="form-control mt-6 mb-5">
+                                <button className="btn btn-success">Login</button>
+                            </div>
+                            <p>OR</p>
+                            <hr />
+                            <div className="form-control mt-6">
+                                <button onClick={handleGoogleLogin} className="btn btn-warning">Sign in with Google</button>
+                            </div>
+                            <p className="text-xs text-white sm:text-sm">
+                                Not have an account?please <Link className='text-teal-600 font-bold' to='/register'>Sign Up</Link>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Login;

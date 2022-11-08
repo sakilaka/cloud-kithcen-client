@@ -25,7 +25,7 @@ const Home = () => {
                     ></ServicesCard>)
                 }
             </div>
-            <div>
+            <div className='text-center'>
                <Link to='/services'><button className="btn btn-success btn-outline">See More</button></Link>
             </div>
         </div>
