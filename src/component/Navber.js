@@ -20,21 +20,22 @@ const Navber = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-100 text-black rounded-box w-52">
-                        {
-                            user?.uid ?
-                                <>
-                                <li><button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button></li>
-                                <li><Link to='addService' className='btn btn-ghost'>Sign Out</Link></li>
-                                <li><Link to='myReviews' className='btn btn-ghost'>Sign Out</Link></li>
-                                </>
-                                :
-                                <>
-                                    <li><Link to='/login'>Sign In</Link></li>
-                                    <li><Link to='/register'>Sign Up</Link></li>
+                            {
+                                user?.uid ?
+                                    <>
+                                        <li><Link to='/addService' className='btn btn-ghost'>Add Service</Link></li>
+                                        <li><Link to='/myReviews' className='btn btn-ghost'>My reviews</Link></li>
+                                        <li><Link to='/services'>Services</Link></li>
+                                        <li><button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button></li>
+                                    </>
+                                    :
+                                    <>
+                                        <li><Link to='/login'>Sign In</Link></li>
+                                        <li><Link to='/register'>Sign Up</Link></li>
+                                        <li><Link to='/services'>Services</Link></li>
+                                    </>
 
-                                </>
-
-                        }
+                            }
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Aka Food Store</Link>
@@ -43,15 +44,17 @@ const Navber = () => {
                     <ul className="menu menu-horizontal p-0">
                         {
                             user?.uid ?
-                            <>
-                            <li><button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button></li>
-                            <li><Link to='/addService' className='btn btn-ghost'>Add Service</Link></li>
-                            <li><Link to='/myReviews' className='btn btn-ghost'>My reviews</Link></li>
-                            </>
+                                <>
+                                    <li><Link to='/addService' className='btn btn-ghost'>Add Service</Link></li>
+                                    <li><Link to='/myReviews' className='btn btn-ghost'>My reviews</Link></li>
+                                    <li><Link to='/services'>Services</Link></li>
+                                    <li><button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button></li>
+                                </>
                                 :
                                 <>
                                     <li><Link to='/login'>Sign In</Link></li>
                                     <li><Link to='/register'>Sign Up</Link></li>
+                                    <li><Link to='/services'>Services</Link></li>
 
                                 </>
 

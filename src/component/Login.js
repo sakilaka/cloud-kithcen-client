@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import {  GoogleAuthProvider } from 'firebase/auth';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider } from 'firebase/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthUserContext } from '../Context/AuthContext';
 
 const Login = () => {
@@ -11,7 +11,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname;
+    const from = location.state?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -21,13 +21,11 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 setUser(user);
-                Navigate(from, { replace: true });
-
             })
             .catch(error => {
                 console.log(error);
-
-            })
+           })
+            navigate(from, { replace: true });
     }
 
 
@@ -68,7 +66,7 @@ const Login = () => {
                         <p className="py-6 text-orange-600">Please Login for review and order food.And also more Features</p>
                     </div>
                     <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <p className='text-red-400 text-xl font-bold my-3'>{error}</p>
+                        <p className='text-red-400 text-xl font-bold my-3'>{error}</p>
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">

@@ -1,11 +1,13 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthUserContext } from '../Context/AuthContext';
 import ReviewForm from './ReviewForm';
 
 const Service = () => {
+    const { user } = useContext(AuthUserContext);
     const service = useLoaderData();
     console.log(service);
-    const {_id, name, price, rating, description, picture } = service[0];
+    const { _id, name, price, rating, description, picture } = service[0];
     return (
         <div>
             <div className='bg-white p-10 container mx-auto'>
@@ -23,10 +25,20 @@ const Service = () => {
                 </div>
             </div>
 
-            <div className='container w-7/12 my-10 border border-white p-10 mx-auto'>
-                <h2 className='text-3xl text-center font-bold text-orange-400 my-5'>Please Review for {name}</h2>
-                <ReviewForm id={_id}></ReviewForm>
-            </div>
+            {
+                user?.uid ?
+                    <div className='container w-7/12 my-10 border border-white p-10 mx-auto'>
+                        <h2 className='text-3xl text-center font-bold text-orange-400 my-5'>Please Review for {name}</h2>
+                        <ReviewForm id={_id}></ReviewForm>
+                    </div>
+                    :
+                    <div className='container mx-auto border border-white my-5'>
+                        <h2 className='text-3xl text-center font-bold text-orange-400 my-5'>Please Review for {name}</h2>
+                        <h1 className='text-4xl my-36 text-center font-bold'>You must login first for review.Please <Link className='text-blue-500' to='/login'>login!</Link> </h1>
+                    </div>
+
+            }
+
         </div>
     );
 };
