@@ -68,6 +68,7 @@ const Login = () => {
                         <p className="py-6 text-orange-600">Please Login for review and order food.And also more Features</p>
                     </div>
                     <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <p className='text-red-400 text-xl font-bold my-3'>{error}</p>
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">

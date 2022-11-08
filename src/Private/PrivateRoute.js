@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../../Context/AuthUserContext';
+import { AuthUserContext } from '../Context/AuthContext';
 
 const PrivateRoute = ({children}) => {
 
-    const { user, load } = useContext(AuthContext);
+    const { user, load } = useContext(AuthUserContext);
     const location = useLocation();
     if (load) {
         return <p className='text-red-500 text-xl mt-5'>loading.......</p>

@@ -5,7 +5,7 @@ import ReviewForm from './ReviewForm';
 const Service = () => {
     const service = useLoaderData();
     console.log(service);
-    const { name, price, rating, description, picture } = service[0];
+    const {_id, name, price, rating, description, picture } = service[0];
     return (
         <div>
             <div className='bg-white p-10 container mx-auto'>
@@ -23,9 +23,9 @@ const Service = () => {
                 </div>
             </div>
 
-            <div className='container my-10 border border-white p-10 mx-auto'>
-                <h2 className='text-3xl font-bold text-orange-400 my-5'>Please Review Here</h2>
-                <ReviewForm></ReviewForm>
+            <div className='container w-7/12 my-10 border border-white p-10 mx-auto'>
+                <h2 className='text-3xl text-center font-bold text-orange-400 my-5'>Please Review for {name}</h2>
+                <ReviewForm id={_id}></ReviewForm>
             </div>
         </div>
     );
