@@ -45,9 +45,9 @@ const Home = () => {
             </div>
 
             <div className='container mx-auto p-20 bg-white'>
-                <h2 className='text-2xl text-red-500 font-bold'>Subscribe Now!!</h2>
-                <h1 className='text-4xl mt-5 text-green-400'>Receive food from me in everyday.Have a nice day.</h1>
-                <input type="email" placeholder="Type your email" className="input input-bordered mt-8 input-primary w-full max-w-xs" />
+                <h2 className='text-2xl text-center text-red-500 font-bold'>Subscribe Now!!</h2>
+                <h1 className='text-4xl text-center mt-5 text-green-400'>Receive food from me in everyday.Have a nice day.</h1>
+                <input type="email" placeholder="Type your email" className="input input-bordered lg:ml-80 mt-8 input-primary w-full max-w-xs" />
                 <button className='btn btn-warning ml-3'>Subscribe</button>
             </div>
 

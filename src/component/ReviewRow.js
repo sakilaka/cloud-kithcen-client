@@ -4,8 +4,6 @@ import React from 'react';
 const ReviewRow = ({ review, handleDelete }) => {
     const { _id, foodName, message, rating } = review;
 
-
-
     return (
         <tr>
             <td>{foodName}</td>
