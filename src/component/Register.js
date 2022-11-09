@@ -2,9 +2,11 @@ import React, { useContext, useState } from 'react';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthUserContext } from '../Context/AuthContext';
+import useTitle from '../Hooks/useTitle';
 
 const Register = () => {
 
+    useTitle('Register');
 
     const auth = getAuth();
     const navigate = useNavigate();

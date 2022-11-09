@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../Hooks/useTitle';
 import kacchi from '../images/kacchi.jpeg';
 import ServicesCard from './ServicesCard';
 
 const Home = () => {
     const services = useLoaderData();
+    useTitle('Home');
     return (
         <div className='my-10 container mx-auto'>
             <div className='grid lg:grid-cols-2 grid-cols-1 gap-20'>
