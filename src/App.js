@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import AddService from './component/AddService';
 import Blog from './component/Blog';
+import ErrorPage from './component/ErrorPage';
 import Home from './component/Home';
 import Login from './component/Login';
 import MyReviews from './component/MyReviews';
@@ -17,26 +18,26 @@ function App() {
     {
       path: '/',
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('http://localhost:5000/services-limit')
+          loader: () => fetch('https://cloud-kitchen-server-six.vercel.app/services-limit')
         },
         {
           path: '/services',
-          element: <Services></Services>,
-          loader: () => fetch('http://localhost:5000/services')
+          element: <Services></Services>
         },
         {
           path: '/services/:id',
           element: <Service></Service>,
-          loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({ params }) => fetch(`https://cloud-kitchen-server-six.vercel.app/services/${params.id}`)
         },
         {
           path: '/update/:id',
           element: <UpdateReviewForm></UpdateReviewForm>,
-          loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+          loader: ({ params }) => fetch(`https://cloud-kitchen-server-six.vercel.app/reviews/${params.id}`)
         },
         {
           path: '/register',

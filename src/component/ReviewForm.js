@@ -24,7 +24,7 @@ const ReviewForm = ({ id, foodName }) => {
             message: message
         }
 
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://cloud-kitchen-server-six.vercel.app/reviews',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

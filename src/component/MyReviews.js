@@ -12,7 +12,7 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`,{
+        fetch(`https://cloud-kitchen-server-six.vercel.app/reviews?email=${user?.email}`,{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('cloud-token')}`
             },
@@ -35,7 +35,7 @@ const MyReviews = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/reviews/${id}`, {
+                fetch(`https://cloud-kitchen-server-six.vercel.app/reviews/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

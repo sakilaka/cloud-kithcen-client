@@ -24,7 +24,7 @@ const AddService = () => {
             description: message
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://cloud-kitchen-server-six.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

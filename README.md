@@ -6,13 +6,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 ### `npm test`
 
@@ -68,3 +61,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### live site link
+
+
+
+### site name
+**Aka's Kitchen**
+
+### Framework use
+**This project i use tailwind CSS.Beacuse there are lot of component.I also used Daisy UI for better look.**
+
+### what is the purpose of this site?
+
+**The main purpose is provide online food services from home kitchen.This food made by me and delivary by online.**
+
+### What i feel by doing this project?
+ **I am feeling so much good,,,i find many arror and solve by me without any help..and finally i am done this project so i feel good.**
