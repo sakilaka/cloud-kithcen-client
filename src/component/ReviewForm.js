@@ -47,7 +47,7 @@ const ReviewForm = ({ id, foodName }) => {
 
     return (
         <div className='container mx-auto'>
-            <form onSubmit={handlePlaceReview} className='' action="">
+            <form onSubmit={handlePlaceReview} className='p-10' action="">
                 <input name='name' defaultValue={user?.displayName} readOnly type="text" placeholder="Type your name" className="input my-2 input-bordered input-warning w-full" />
                 <input type="text" defaultValue={user?.photoURL} readOnly placeholder="your photo URL" className="input my-2 input-bordered input-warning w-full" />
                 <input name='rating' type="text" placeholder="Rating" className="input my-2 input-bordered input-warning w-full" />
