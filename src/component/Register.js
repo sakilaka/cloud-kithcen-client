@@ -45,7 +45,7 @@ const Register = () => {
 
     return (
         <div>
-            <div className="hero container mx-auto border border-white p-8">
+            <div className="hero container mx-auto border border-white p-1 lg:p-8">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left text-green-400">
                         <h1 className="text-5xl font-bold">Register now!</h1>

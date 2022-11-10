@@ -82,7 +82,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero mx-auto p-10 bg-slate-200 container">
+            <div className="hero mx-auto p-2 lg:p-10 bg-slate-200 container">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold text-orange-400">Login now!</h1>
