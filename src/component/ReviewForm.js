@@ -48,10 +48,10 @@ const ReviewForm = ({ id, foodName }) => {
     return (
         <div className='container mx-auto'>
             <form onSubmit={handlePlaceReview} className='lg:p-10' action="">
-                <input name='name' defaultValue={user?.displayName} readOnly type="text" placeholder="Type your name" className="input my-2 input-bordered input-warning w-full" />
-                <input type="text" defaultValue={user?.photoURL} readOnly placeholder="your photo URL" className="input my-2 input-bordered input-warning w-full" />
-                <input name='rating' type="text" placeholder="Rating" className="input my-2 input-bordered input-warning w-full" />
-                <textarea name='message' className="textarea textarea-warning w-full my-2 h-32" placeholder="please say something about my home made food item."></textarea>
+                <input name='name' defaultValue={user?.displayName} readOnly type="text" placeholder="Type your name" className="input my-2 input-bordered input-warning w-full" required/>
+                <input type="text" defaultValue={user?.photoURL} readOnly placeholder="your photo URL" className="input my-2 input-bordered input-warning w-full" required/>
+                <input name='rating' type="text" placeholder="Rating" className="input my-2 input-bordered input-warning w-full" required/>
+                <textarea name='message' className="textarea textarea-warning w-full my-2 h-32" placeholder="please say something about my home made food item." required></textarea>
                 <p className='text-center'>
                     <button className='btn btn-warning btn-outline'>Submit</button>
                 </p>

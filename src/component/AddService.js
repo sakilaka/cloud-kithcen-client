@@ -50,11 +50,11 @@ return (
     <div>
         <h1 className='lg:text-4xl text-2xl text-center my-10 font-bold text-orange-400'>Add Food Menu Here</h1>
         <form onSubmit={handleAddService} className='lg:w-9/12 w-full p-10 mx-auto' action="">
-            <input name='name' type="text" placeholder="Food name" className="input my-2 input-bordered input-success w-full" />
-            <input type="text" name='photo' placeholder="Food photo URL" className="input my-2 input-bordered input-success w-full" />
-            <input name='rating' type="text" placeholder="Rating" className="input my-2 input-bordered input-success w-full" />
-            <input name='price' type="number" placeholder="Price" className="input my-2 input-bordered input-success w-full" />
-            <textarea name='message' className="textarea textarea-success w-full my-2 h-32" placeholder="Description"></textarea>
+            <input name='name' type="text" placeholder="Food name" className="input my-2 input-bordered input-success w-full" required/>
+            <input type="text" name='photo' placeholder="Food photo URL" className="input my-2 input-bordered input-success w-full" required/>
+            <input name='rating' type="text" placeholder="Rating" className="input my-2 input-bordered input-success w-full" required/>
+            <input name='price' type="number" placeholder="Price" className="input my-2 input-bordered input-success w-full" required/>
+            <textarea name='message' className="textarea textarea-success w-full my-2 h-32" placeholder="Description" required></textarea>
             <p className='text-center'>
                 <button className='btn btn-success btn-outline'>Submit</button>
             </p>

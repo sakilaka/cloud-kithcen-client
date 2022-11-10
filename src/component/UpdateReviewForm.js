@@ -53,10 +53,10 @@ const UpdateReviewForm = () => {
         <div className='container mx-auto'>
             <h2 className='text-3xl text-center text-lime-300 my-10'>Update review for {foodName}</h2>
             <form onSubmit={handlePlaceUpdateReview} className='p-10' action="">
-                <input name='name' defaultValue={user?.displayName} readOnly type="text" placeholder="Type your name" className="input my-2 input-bordered input-warning w-full" />
-                <input type="text" defaultValue={user?.photoURL} readOnly placeholder="your photo URL" className="input my-2 input-bordered input-warning w-full" />
-                <input name='rating' defaultValue={rating} type="text" placeholder="Rating" className="input my-2 input-bordered input-warning w-full" />
-                <textarea name='message' defaultValue={message} className="textarea textarea-warning w-full my-2 h-32" placeholder="please say something about my home made food item."></textarea>
+                <input name='name' defaultValue={user?.displayName} readOnly type="text" placeholder="Type your name" className="input my-2 input-bordered input-warning w-full" required/>
+                <input type="text" defaultValue={user?.photoURL} readOnly placeholder="your photo URL" className="input my-2 input-bordered input-warning w-full" required/>
+                <input name='rating' defaultValue={rating} type="text" placeholder="Rating" className="input my-2 input-bordered input-warning w-full" required/>
+                <textarea name='message' defaultValue={message} className="textarea textarea-warning w-full my-2 h-32" placeholder="please say something about my home made food item." required></textarea>
                 <p className='text-center'>
                     <button className='btn btn-warning btn-outline'>Update</button>
                 </p>

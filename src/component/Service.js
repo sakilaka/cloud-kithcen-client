@@ -66,7 +66,7 @@ const Service = () => {
                     <div className='my-10 container mx-auto'>
                         <h1 className='text-4xl text-center font-bold text-sky-400 my-10'>All review for {name}</h1>
                         <div className="overflow-x-auto">
-                            <table className="table border border-white lg:w-8/12 mx-auto w-full">
+                            <table className="table container p-5 border border-white my-10 text-white mx-auto lg:w-8/12">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
