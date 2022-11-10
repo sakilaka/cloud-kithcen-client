@@ -60,7 +60,7 @@ const Service = () => {
             </div>
 
 
-            {/* {
+            {
                 allReviews.length > 0
                     ?
                     <div className='my-10 container mx-auto'>
@@ -90,31 +90,9 @@ const Service = () => {
                     <div className='text-5xl border container mx-auto border-white p-10 my-52 text-center text-blue-300'>
                         No reviews for {name}!!
                     </div>
-            } */}
+            }
 
-            <div className='my-10 container mx-auto'>
-                <h1 className='text-4xl text-center font-bold text-sky-400 my-10'>All review for {name}</h1>
-                <div className="overflow-x-auto">
-                    <table className="table border border-white lg:w-8/12 mx-auto w-full">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Image</th>
-                                <th>Message</th>
-                                <th>Rating</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                allReviews.map(review => <AllreviewRow
-                                    key={review._id}
-                                    review={review}
-                                ></AllreviewRow>)
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+         
 
 
             {
