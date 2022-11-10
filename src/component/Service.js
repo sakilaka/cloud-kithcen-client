@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthUserContext } from '../Context/AuthContext';
 import useTitle from '../Hooks/useTitle';
+import AllreviewRow from './AllreviewRow';
 import ReviewForm from './ReviewForm';
 
 const Service = () => {
@@ -11,10 +12,27 @@ const Service = () => {
     const service = useLoaderData();
     console.log(service);
     const { _id, name, price, rating, description, picture } = service[0];
+
+
+    // http://localhost:5000/reviews?foodID=63695a0346ba50945d7834bd
+
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+
+        fetch(`http://localhost:5000/reviews?foodID=${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setReviews(data)
+            })
+            .catch(err => console.log(err))
+    }, [_id])
+
     return (
         <div>
-            <div className='bg-white my-5 lg:p-10 container mx-auto'>
-                <div className="card w-96 lg:w-7/12 bg-base-100 shadow-xl mx-auto">
+            <div className='bg-white lg:py-1 py-10 my-5 lg:p-10 container mx-auto'>
+                <div className="card w-[350px] lg:w-7/12 bg-base-100 shadow-xl mx-auto">
                     <figure className="px-10 pt-10">
                         <img src={picture} alt="menu" className="rounded-xl h-48" />
                     </figure>
@@ -27,6 +45,39 @@ const Service = () => {
                     </div>
                 </div>
             </div>
+
+
+            {
+                reviews.length > 0 ?
+                    <div className='my-10 container mx-auto'>
+                        <h1 className='text-4xl text-center font-bold text-sky-400 my-10'>All review for {name}</h1>
+                        <div className="overflow-x-auto">
+                            <table className="table border border-white lg:w-8/12 mx-auto w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Image</th>
+                                        <th>Message</th>
+                                        <th>Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        reviews.map(review => <AllreviewRow
+                                            key={review._id}
+                                            review={review}
+                                        ></AllreviewRow>)
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    :
+                    <div className='text-5xl border container mx-auto border-white p-10 my-52 text-center text-blue-300'>
+                        No reviews for {name}!!
+                    </div>
+            }
+
 
             {
                 user?.uid ?

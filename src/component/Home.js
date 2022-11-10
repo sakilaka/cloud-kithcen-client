@@ -20,7 +20,7 @@ const Home = () => {
             </div>
 
             <div className='bg-slate-100 py-10 lg:px-5 mt-5'>
-            <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 gap-10 my-12 py-10 lg:pl-4 lg:py-10 mx-auto'>
+            <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 px-3 gap-10 my-12 py-10 lg:pl-4 lg:py-10 mx-auto'>
                 {
                     services.map(service => <ServicesCard
                         key={service._id}
