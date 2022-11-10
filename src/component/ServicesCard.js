@@ -7,7 +7,7 @@ const ServicesCard = ({ service }) => {
     const { _id, picture, price, description, name } = service;
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 my-3 shadow-xl">
 
                 <PhotoProvider>
                     <div className="foo px-10 pt-10">

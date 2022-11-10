@@ -34,8 +34,8 @@ const Services = () => {
     return (
         <div>
 
-            <h2 className='text-3xl text-center text-orange-300 font-bold my-5'>All services from my cloud kitchen</h2>
-            <div className='container grid lg:grid-cols-2 grid-cols-1 gap-20 my-12 bg-slate-100 pl-5 py-10 pr-5 lg:pl-28 lg:py-20 mx-auto'>
+            <h2 className='lg:text-3xl text-2xl text-center lg:p-1 p-3 text-orange-300 font-bold my-5'>All services from my cloud kitchen</h2>
+            <div className='lg:container lg:grid md:grid lg:grid-cols-2 md:grid-cols-2 gap-10 my-12 bg-slate-100 py-10 lg:pl-28 lg:py-20 mx-auto'>
                 {
                     services.map(service => <ServicesCard
                         key={service._id}

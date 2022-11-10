@@ -38,7 +38,7 @@ const AddService = () => {
                     form.reset();
                     Swal.fire(
                         'Good job!',
-                        'Review added!',
+                        'Food Services added!',
                     )
                 }
             })
@@ -48,7 +48,7 @@ const AddService = () => {
 
 return (
     <div>
-        <h1 className='text-4xl text-center my-10 font-bold text-orange-400'>Add Food Menu Here</h1>
+        <h1 className='lg:text-4xl text-2xl text-center my-10 font-bold text-orange-400'>Add Food Menu Here</h1>
         <form onSubmit={handleAddService} className='lg:w-9/12 w-full p-10 mx-auto' action="">
             <input name='name' type="text" placeholder="Food name" className="input my-2 input-bordered input-success w-full" />
             <input type="text" name='photo' placeholder="Food photo URL" className="input my-2 input-bordered input-success w-full" />

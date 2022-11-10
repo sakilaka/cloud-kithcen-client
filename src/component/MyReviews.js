@@ -66,7 +66,7 @@ const MyReviews = () => {
                 <h1 className='text-4xl my-5 text-center text-green-300 font-bold'>Your total reviews : {reviews.length}</h1>
                 <div className="overflow-x-auto">
 
-                    <table className="table container my-10 text-white mx-auto lg:w-8/12 w-full">
+                    <table className="table container p-5 border border-white my-10 text-white mx-auto lg:w-8/12">
                         <thead>
                             <tr>
                                 <th>Food Name</th>

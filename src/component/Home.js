@@ -19,8 +19,8 @@ const Home = () => {
 
             </div>
 
-            <div className='bg-slate-100 py-10 px-5 mt-5'>
-            <div className='grid lg:grid-cols-3 grid-cols-1 gap-10 my-12 pl-5 py-10 pr-5 lg:pl-4 lg:py-10 mx-auto'>
+            <div className='bg-slate-100 py-10 lg:px-5 mt-5'>
+            <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 gap-10 my-12 py-10 lg:pl-4 lg:py-10 mx-auto'>
                 {
                     services.map(service => <ServicesCard
                         key={service._id}
@@ -49,8 +49,8 @@ const Home = () => {
             <div className='container mx-auto p-20 bg-white'>
                 <h2 className='text-2xl text-center text-red-500 font-bold'>Subscribe Now!!</h2>
                 <h1 className='text-4xl text-center mt-5 text-green-400'>Receive food from me in everyday.Have a nice day.</h1>
-                <input type="email" placeholder="Type your email" className="input input-bordered lg:ml-80 mt-8 input-primary w-full max-w-xs" />
-                <button className='btn btn-warning ml-3'>Subscribe</button>
+                <input type="email" placeholder="Type your email" className="input input-bordered lg:ml-80 mt-8 input-primary w-full lg:w-5/12" />
+                <p className='text-center'><button className='btn btn-warning ml-3 my-2'>Subscribe</button></p>
             </div>
 
         </div>

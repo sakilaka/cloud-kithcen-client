@@ -31,8 +31,8 @@ const Navber = () => {
                                     </>
                                     :
                                     <>
-                                        <li><Link to='/login'>Sign In</Link></li>
-                                        <li><Link to='/register'>Sign Up</Link></li>
+                                        <li><Link className='btn btn-ghost' to='/login'>Sign In</Link></li>
+                                        <li><Link className='btn btn-ghost' to='/register'>Sign Up</Link></li>
                                     </>
 
                             }
@@ -40,7 +40,7 @@ const Navber = () => {
                             <li><Link className='btn btn-ghost' to='/blog'>Blog</Link></li>
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">Aka Food Store</Link>
+                    <Link to='/' className="font-bold lg:text-lg">Aka's kitchen</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -55,8 +55,8 @@ const Navber = () => {
                                 </>
                                 :
                                 <>
-                                    <li><Link to='/login'>Sign In</Link></li>
-                                    <li><Link to='/register'>Sign Up</Link></li>
+                                    <li><Link className='btn btn-ghost' to='/login'>Sign In</Link></li>
+                                    <li><Link className='btn btn-ghost' to='/register'>Sign Up</Link></li>
                                 </>
 
                         }
